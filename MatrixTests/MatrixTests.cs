@@ -350,8 +350,6 @@ namespace MatrixTests
         }
         #endregion
         
-        //TODO: Uncomment this if you want to check your task for advanced unit tests
-        /*
         #region Advanced
         
         [TestCase(4, 3)]
@@ -669,6 +667,5 @@ namespace MatrixTests
         
         #endregion
         
-        */
     }
 }

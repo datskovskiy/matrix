@@ -118,7 +118,7 @@ namespace MatrixLibrary
         /// <returns>A deep copy of the current object.</returns>
         public object Clone()
         {
-            throw new NotImplementedException();
+            return new Matrix(Array);
         }
 
         /// <summary>
@@ -266,7 +266,22 @@ namespace MatrixLibrary
         /// <returns>True if matrices are equal, false if are not equal.</returns>
         public override bool Equals(object obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) return false;
+            if (obj.GetType() != GetType()) return false;
+
+            var matrix = (Matrix) obj;
+
+            if ((matrix.Rows != Rows || matrix.Columns != Columns)) return false;
+
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    if (!matrix[i, j].Equals(Array[i, j])) return false;
+                }
+            }
+
+            return true;
         }
 
         public override int GetHashCode() => Array.GetHashCode();
