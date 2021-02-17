@@ -269,6 +269,6 @@ namespace MatrixLibrary
             throw new NotImplementedException();
         }
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode() => Array.GetHashCode();
     }
 }
